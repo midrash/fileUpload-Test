@@ -1,0 +1,10 @@
+package com.ssafy.self.model.service;
+
+public class ProblenListServiceImpl {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

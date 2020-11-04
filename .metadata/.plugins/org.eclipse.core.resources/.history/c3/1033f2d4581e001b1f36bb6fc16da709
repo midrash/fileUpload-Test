@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+	<form action="test.do" method="post" enctype="multipart/form-data">
+		<input type="text" name="msg">
+		<input type="file" name="attach" multiple>
+		<button type="button" >전송</button>
+	</form>
+
+	<script >
+	$("button").click(function(){
+		alert("아무거나")
+		console.dir($("input[name ='attach']")[0].files); // $("input[name ='attach']") 이까진  제이쿼리이고 [0] 이 붙으면 순수 html로 부터 객체를 가져옴 
+		console.dir($("input[name ='attach']")[0].files); // $ [2].files[0] 
+		
+		/*
+		$.ajax({
+			url:,
+			data
+		})
+		*/
+	});
+	</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="demo"/>
+<aop-project name="spring-cors-frontend"/>
+<aop-project name="fileupload03-legacy"/>
+<aop-project name="spring-cors-apiserver"/>
+<aop-project name="spring-ajax-test"/>
+<aop-project name="spring-test"/>
+<aop-project name="spring-self-test"/>
+</aop-reference-model>

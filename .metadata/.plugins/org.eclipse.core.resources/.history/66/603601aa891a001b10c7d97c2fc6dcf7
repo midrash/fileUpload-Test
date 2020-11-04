@@ -1,0 +1,9 @@
+package com.ssafy.self.model.mapper;
+
+import java.util.List;
+
+import com.ssafy.self.model.dto.Comment;
+
+public interface CommentMapper {
+	List<Comment> selectComment();
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+	<form action="test.do" method="post" enctype="multipart/form-data">
+		<input type="text" name="msg">
+		<input type="file" name="attach" multiple>
+		<button type="button" >전송</button>
+	</form>
+
+	<script >
+	$("button").click(function(){		
+		// 데이터 전송을 위한 객체 생성
+		let fd = new FormData();
+		fd.append("msg", &("input[name='msg'].val()"))		
+		let files = $("input[name = 'attach']")[0].files;
+		for (var i = 0; i < files.length; i++) {
+			fd.append("attach",files[i]);
+		}
+		
+		/*
+		$.ajax({
+			url:,
+			data
+		})
+		*/
+	});
+	</script>
+</body>
+</html>

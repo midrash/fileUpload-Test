@@ -1,0 +1,18 @@
+create database selfTest;
+
+use selfTest;
+create table TEST(
+	no int primary key,
+	title varchar(20) not null,
+	level varchar(10) not null,
+	user int not null,
+	submission int not null,
+	percent varchar(10) not null,
+	recommend int not null,
+	point int not null
+);
+
+create table COMMENT(
+	no int primary key,
+	comment varchar(50) not null
+);

@@ -1,0 +1,28 @@
+package com.ssafy.apiserver;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class Test03 {
+	// /cors/test03?callback = aa;
+	@GetMapping(value="/cors/test03", produces = "text/html;charset=utf-8")
+	public String service(String callback) {
+		System.out.println("요청 들어옴");
+		String result ="";
+		/*
+		 * cors/test03?callback = aa;
+		 * 
+		 * aa('<h1>Api callback 호출 성공</h1>')
+		 * function aaa(msg);
+		 */
+		if (callback ==null) {
+			result = callback + "('<h1>Api callback 호출 성공</h1>')";
+		}
+		else {
+			result = "cb('<h1>Api callback 호출 성공</h1>')";
+		}
+		return result;
+		
+	}
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+	<form>
+		<input type="text" name="msg">
+		<input type="file" name="attach" multiple>
+		<button type="button" >전송</button>
+	</form>
+
+	<script >
+	$("button").click(function(){		
+		// 데이터 전송을 위한 객체 생성
+		let fd = new FormData(); // 에이작스가 아닐땐 브라우저가 전송을 누를떄 자동으로 전달함, 에이작스는 자동으로 안되서 직접 전달한느 방식
+		fd.append("msg", $("input[name='msg'].val()")); // 객체에 데이터를 추가함 append 를 사용해서
+		
+		let files = $("input[name = 'attach']")[0].files;
+		for (var i = 0; i < files.length; i++) {
+			fd.append("attach",files[i]);
+		}
+		
+		
+		// ajax 방식으로  파일 업로드시 추가될 2가지 속성
+		// 1.processData : false;
+		// 2.contentData: false;
+		$.ajax({
+			url: "test.do",
+			data : fd,
+			type: "POST",
+			processData : false,
+			contentData: false, 
+			success: function(){
+				alert("ajax 파일 업로드 성공!!")
+			}			
+		})
+	});
+	</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+	<h2>API 호출 테스트</h2>
+	<button>호출</button>
+	<div id="result"></div>
+	<script>
+		/*
+		CORS policy
+		Cross-Origin Resource Sharing
+		
+		*/
+		console.log("location.origin", location.origin);
+		// http://localhost:8080/frontend/html/test01.html
+		// http://localhost:8080
+		
+		// http://localhost:8080/apiserver/
+		// http://localhost:8080
+		
+		// 프론트(http://localhost:8080)
+		// 백엔드 API(http://localhost:8080)
+		
+		$("button").click(function () {
+			$.ajax({
+				url: "http://localhost:8080/apiserver/cors/test01",
+				dataType: "html",
+				success: function (result) {
+					$("#result").html(result);
+				}
+			});
+		});
+	</script>
+</body>
+</html>

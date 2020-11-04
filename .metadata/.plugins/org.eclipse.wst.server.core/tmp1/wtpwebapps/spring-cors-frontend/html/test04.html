@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+	<h2>API 호출 테스트</h2>
+	<button>호출</button>
+	<div id="result"></div>
+	<script>
+		/*
+		CORS 해결책
+		
+		- 서비스 제공자(api) 가 허락하는 경우에 브라우저는 데이터를 로드할 수 있다.
+		- 서비스 제공자가 헤더(Access-Control-Allow-Origin)를 호출한 사용자의 오리진을 지정하면
+		브라우저가 거부하지 않고 데이터를 로드한다.
+		
+		
+		*/
+		console.log("location.origin", location.origin);
+		$("button").click(function () {
+			$.ajax({
+				url: "http://localhost:8080/apiserver/cors/test04",
+				dataType: "html",
+				success: function (result) {
+					$("#result").html(result);
+				}
+			});
+		});
+	</script>
+</body>
+</html>

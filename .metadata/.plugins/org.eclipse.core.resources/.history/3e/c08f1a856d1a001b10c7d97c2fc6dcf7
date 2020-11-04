@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+	<h2>API 호출 테스트</h2>
+	<button>호출</button>
+	<div id="result"></div>
+	<script>
+		/*
+			Jsonp(Json padding) 활용하기
+			
+			- scrpit 태그를 이용해 자바스크립트 파일을 요청하는것은
+			  SOP(Same Origin Policy)의 영향을 받지 않는것을 이용하자...
+		*/
+	
+			function mycb(msg){
+			$("#result").html(msg);
+		}
+		$("button").click(function (){
+			// $.getScript("http://localhost:8080/apiserver/cors/test03?callback=mycb"); // 스크립트 코드 이용
+			
+			// jsonp 방식 적용
+			/*
+			// http://localhost:8080/apiserver/cors/test03?callback=mycb&_=1604033958244
+			$.ajax({
+				url: "http://localhost:8080/apiserver/cors/test03",
+				dataType : "jsonp", // 제쿼리가 판단해줌
+				jsonpCallback: "mycb" // 이걸 쓰면 위와 같은 형태로 제이쿼리가 바꿔줌 
+			})
+			*/
+			$.ajax({
+				url: "http://localhost:8080/apiserver/cors/test03",
+				dataType : "jsonp", // 제쿼리가 판단해줌
+				jsonp: "callback", // 이걸 쓰면 위와 같은 형태로 제이쿼리가 바꿔줌 
+				success: function(msg){
+					$("#result").html(msg);
+				}
+			});
+		});
+	</script>
+	
+</body>
+</html>

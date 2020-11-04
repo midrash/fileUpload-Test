@@ -1,0 +1,14 @@
+package com.ssafy.fileupload03;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/file")
+public class FIleUploadController {
+
+	@RequestMapping(value = "/upload1.do", method=RequestMethod.POST)
+	public String upload01() {
+		return "index";
+	}
+}

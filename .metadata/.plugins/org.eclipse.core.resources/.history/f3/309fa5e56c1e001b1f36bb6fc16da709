@@ -1,0 +1,14 @@
+package com.ssafy.fileupload03;
+
+import java.util.List;
+
+import org.springframework.web.multipart.MultipartFile;
+
+public class FileVO {
+
+	private String msg;
+	private List<MultipartFile> getAttach(){
+		return attach;
+	}
+	
+}
