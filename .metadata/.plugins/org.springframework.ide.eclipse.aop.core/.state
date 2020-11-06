@@ -3,8 +3,10 @@
 <aop-project name="demo"/>
 <aop-project name="spring-cors-frontend"/>
 <aop-project name="fileupload03-legacy"/>
+<aop-project name="fileupload05-board.zip_expanded"/>
 <aop-project name="spring-cors-apiserver"/>
 <aop-project name="spring-ajax-test"/>
 <aop-project name="spring-test"/>
+<aop-project name="fileupload04-boot"/>
 <aop-project name="spring-self-test"/>
 </aop-reference-model>
